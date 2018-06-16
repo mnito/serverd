@@ -10,7 +10,9 @@
   let SIN6_FAMILY = UInt8(Darwin.AF_INET6)
 #endif
 
-#if swift(>=3.1.1)
+#if swift(>=3.3.0)
+  let SOCKET_SOCK_STREAM = Int32(SOCK_STREAM)
+#elseif swift(>=3.1.1)
   let SOCKET_SOCK_STREAM = Int32(SOCK_STREAM.rawValue)
 #else
   let SOCKET_SOCK_STREAM = Int32(SOCK_STREAM)
